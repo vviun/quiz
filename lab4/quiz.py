@@ -4,13 +4,13 @@ import sqlite3
 
 app = Flask(__name__)
 
-# Підключення до бази даних
+
 def get_db_connection():
     conn = sqlite3.connect('results.db')
     conn.row_factory = sqlite3.Row
     return conn
 
-# Ініціалізація бази даних
+
 def initialize_database():
     conn = get_db_connection()
     conn.execute('''
@@ -38,23 +38,41 @@ def quiz():
 @app.route('/api/save-result', methods=['POST'])
 def save_result():
     try:
+
         data = request.get_json()
         first_name = data.get('firstName')
         last_name = data.get('lastName')
         score = data.get('score')
-
         if not all([first_name, last_name, score is not None]):
             return jsonify({'error': 'Incomplete data'}), 400
 
         conn = get_db_connection()
-        cursor = conn.execute('INSERT INTO results (first_name, last_name, score) VALUES (?, ?, ?)', 
-                               (first_name, last_name, score))
+        cursor = conn.execute(
+            'SELECT id FROM results WHERE first_name = ? AND last_name = ?',
+            (first_name, last_name)
+        )
+        existing_record = cursor.fetchone()
+
+        if existing_record:
+            conn.execute(
+                'UPDATE results SET score = ? WHERE id = ?',
+                (score, existing_record['id'])
+            )
+            message = 'Result updated successfully'
+        else:
+            conn.execute(
+                'INSERT INTO results (first_name, last_name, score) VALUES (?, ?, ?)',
+                (first_name, last_name, score)
+            )
+            message = 'Result saved successfully'
+
         conn.commit()
         conn.close()
 
-        return jsonify({'message': 'Result saved successfully', 'id': record_id}), 200
+        return jsonify({'message': message}), 200
     except sqlite3.Error as e:
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
+     initialize_database()
     app.run(debug=True)
