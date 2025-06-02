@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+   <body> 
+        <div class="start-page"> 
+            <div class="div"> 
+                <div class="overlap-group"> 
+                    <div class="text-wrapper">Genius</div> 
+                    <div class="text-wrapper-2">quiz</div> 
+                </div> 
+                    
+
+
+                <div class="overlap-group-2">
+                    <div class="rectangle">
+                        <input type="text" id="firstName" class="input-field" placeholder="Ваше ім'я" />
+                        <input type="text" id="lastName" class="input-field" placeholder="Ваше прізвище" />
+                        <button class="button">Надіслати</button>
+                    </div> 
+                    <div class="rectangle-2"></div>
+                    <div class="text-wrapper-3">Старт→</div>
+                    <p class="p">Чи маєш ти шанс вижити в зомбі-апокаліпсисі?</p>
+                    
+                </div>
+                <div class="overlap">
+                    <div class="element-by-valeriia">2025&nbsp;&nbsp;by Valeriia Viun</div>
+                </div>
+            </div> 
+        </div> 
+
+        <script>
+           
+            document.querySelector('.rectangle-2').addEventListener('click', function () {
+                const firstName = document.getElementById('firstName').value.trim();
+                const lastName = document.getElementById('lastName').value.trim();
+
+                if (!firstName || !lastName) {
+                    alert('Будь ласка, введіть своє ім’я та прізвище.');
+                    return;
+                }
+
+                localStorage.setItem('userFirstName', firstName);
+                localStorage.setItem('userLastName', lastName);
+
+                document.querySelector('.rectangle-2').addEventListener('click', function () {
+                    window.location.href = '/quiz';  // Відповідає маршруту Flask
+                });
+            });
+
+        </script>
+   </body>
+</html>

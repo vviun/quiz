@@ -1,0 +1,273 @@
+body {
+ background-color: #090909;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ width: 100%;
+}
+.div {
+ background-color: #090909;
+ width: 1480px;
+ height: 2253px;
+ position: relative;
+}
+.overlap-group {
+ top: -1px;
+ position: absolute;
+ width: 1480px;
+ height: 94px;
+ left: 0;
+ background-color: #360505;
+}
+.overlap-2 {
+ position: absolute;
+ width: 1132px;
+ height: 425px;
+ top: 51px;
+ left: 73px;
+ background-color: #090909;
+ border-radius: 61px;
+}
+
+
+.text-wrapper {
+ position: absolute;
+ width: 167px;
+ height: 34px;
+ top: 20px;
+ left: 100px;
+ font-family: "Righteous-Regular", Helvetica;
+ font-weight: 400;
+ color: #eaba1b;
+ font-size: 32px;
+ text-align: center;
+ letter-spacing: 0;
+ line-height: normal;
+ white-space: nowrap;
+}
+
+.text-wrapper-2 {
+ position: absolute;
+ height: 19px;
+ top: 52px;
+ left: 170px;
+ font-family: "Righteous-Regular", Helvetica;
+ font-weight: 400;
+ color: #eaba1b;
+ font-size: 15px;
+ text-align: center;
+ letter-spacing: 0;
+ line-height: normal;
+}
+.overlap {
+ top: 2159px;
+ position: absolute;
+ width: 1480px;
+ height: 94px;
+ left: 0;
+ background-color: #360505;
+}
+
+
+.element-by-valeriia {
+ position: absolute;
+ height: 15px;
+ top: 34px;
+ left: 680px;
+ font-family: "Righteous-Regular", Helvetica;
+ font-weight: 400;
+ color: #eaba1b;
+ font-size: 12px;
+ text-align: center;
+ letter-spacing: 0;
+ line-height: normal;
+}
+
+.rectangle {
+ position: absolute;
+ width: 1280px;
+ height: 2066px;
+ top: 93px;
+ left: 100px;
+ background-color: #000000;
+}
+
+/* ======  STYLES ====== */
+.overlap-group-2 {
+ position: absolute;
+ width: 1280px;
+ height: 2066px;
+ top: 93px;
+ left: 100px;
+ background-color: #000
+}
+.start-page .rectangle {
+ position: absolute;
+ width: 1132px;
+ height: 425px;
+ top: 125px;
+ left: 74px;
+ background-color: #090909;
+ border-radius: 61px;
+ 
+}
+.start-page .rectangle-2 {
+ position: absolute;
+ width: 331px;
+ height: 73px;
+ top: 430px;
+ left: 826px;
+ background-color: #360505;
+ border-radius: 46px;
+ cursor: pointer;
+}
+.start-page .rectangle-2:hover {
+  background-color: #5c0a0a;
+}
+
+.start-page .text-wrapper-3 {
+ width: 117px;
+ height: 19px;
+ top: 456px;
+ left: 933px;
+ font-size: 15px;
+ position: absolute;
+ font-family: "Rubik Mono One-Regular", Helvetica;
+ font-weight: 400;
+ color: #eaba1b;
+ text-align: center;
+ letter-spacing: 0;
+ line-height: normal;
+}
+
+.start-page .p {
+ width: 969px;
+ height: 90px;
+ top: 247px;
+ left: 155px;
+ font-size: 36px;
+ position: absolute;
+ font-family: "Rubik Mono One-Regular", Helvetica;
+ font-weight: 400;
+ color: #eaba1b;
+ text-align: center;
+ letter-spacing: 0;
+ line-height: normal;
+}
+
+
+
+/* ====== QUIZ PAGE CONTENT STYLES ====== */
+.quiz-container {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #eaba1b;
+  font-family: "Rubik Mono One", sans-serif;
+}
+
+.question-title {
+   
+    text-align: center;
+    font-family: "RubikMonoOne-Regular", sans-serif;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.answer {
+  background-color: #360505;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+.answer:hover {
+  background-color: #5c0a0a;
+}
+
+.answer.selected {
+  background-color: #000000;
+  border: 2px solid #eaba1b;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #360505;
+  color: #eaba1b;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-family: "Rubik Mono One", sans-serif;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5c0a0a;
+}
+
+/* ====== DATABASE PAGE STYLES ====== */
+.database-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.database-entry {
+  background-color: #090909;
+  border-left: 5px solid #eaba1b;
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+
+/* ====== INHERITED PAGE EXAMPLE (EXTENSION PAGE) ====== */
+.extension-content {
+  padding: 20px;
+  border: 1px dashed #eaba1b;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+}
+
+/* ====== BUTTONS & INTERACTION ====== */
+.button {
+  padding: 10px 20px;
+  background-color: #eaba1b;
+  color: #090909;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #d4a217;
+}
+
+/* ====== INPUT FIELD STYLES ====== */
+.input-field {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #eaba1b;
+    border-radius: 10px;
+    background-color: #090909;
+    color: #eaba1b;
+    font-family: "Rubik Mono One", sans-serif;
+    font-size: 16px;
+    position: relative;
+    z-index: 10;
+}
+.p {
+    margin-bottom: 50px;
+}
+.input-field:focus {
+    border-color: #5c0a0a;
+    outline: none;
+    
+}
